@@ -25,7 +25,10 @@
         v-model="dueDate"
         type="datetime"
         placeholder="Select date and time" />
-      <el-button plain>作成</el-button>
+      <el-button
+        :disabled="isValid"
+        plain
+      >作成</el-button>
     </section>
   </div>
 </template>
@@ -39,6 +42,11 @@ export default {
     return {
       title: '',
       dueDate: tommorow
+    }
+  },
+  computed: {
+    isValid () {
+      return !(this.title.length > 0 && this.dueDate != null);
     }
   }
 }
