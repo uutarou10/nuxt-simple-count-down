@@ -7,6 +7,7 @@
 export default {
   head () {
     return {
+      title: 'SIMPLE COUNT DOWN',
       link: [
         {hid: 'font', href: 'https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700,900&amp;subset=japanese', rel: 'stylesheet'}
       ]

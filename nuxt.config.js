@@ -19,6 +19,10 @@ module.exports = {
     ]
   },
 
+  env: {
+    apiKey: process.env.FIREBASE_API_KEY
+  },
+
   /*
   ** Customize the progress-bar color
   */
@@ -35,7 +39,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '~/plugins/firebase.js'
   ],
 
   /*

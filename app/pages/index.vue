@@ -35,9 +35,9 @@
 
 <script>
 export default {
-  asyncData() {
+  asyncData({app}) {
     const now = new Date();
-    const tommorow = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const tommorow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
 
     return {
       title: '',
@@ -90,5 +90,9 @@ header img {
 
 .form > button {
   width: 30%;
+}
+
+p {
+  line-height: 1.8em;
 }
 </style>
