@@ -9,6 +9,11 @@ import { mapState } from 'vuex';
 import Timer from  '../../components/Timer';
 
 export default {
+  head () {
+    return {
+      title: `「${this.currentTimer.title}」までのカウントダウンタイマー`
+    };
+  },
   components: {
     Timer
   },
