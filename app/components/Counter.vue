@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p>{{ years }}<span>年</span></p>
-    <p>{{ months }}<span>ヶ月</span></p>
-    <p>{{ days }}<span>日</span></p>
-    <p>{{ hours }}<span>時間</span></p>
-    <p>{{ minutes }}<span>分</span></p>
+    <p v-if="years">{{ years }}<span>年</span></p>
+    <p v-if="months">{{ months }}<span>ヶ月</span></p>
+    <p v-if="days">{{ days }}<span>日</span></p>
+    <p v-if="hours">{{ hours }}<span>時間</span></p>
+    <p v-if="minutes">{{ minutes }}<span>分</span></p>
     <p>{{ seconds }}<span>秒</span></p>
 
   </div>
