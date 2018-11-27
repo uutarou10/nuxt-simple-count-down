@@ -1,14 +1,25 @@
 <template>
-  <div class="timer">
-    <div>
-      <p v-if="years">{{ years }}<span>年</span></p>
-      <p v-if="months">{{ months }}<span>ヶ月</span></p>
-      <p v-if="days">{{ days }}<span>日</span></p>
+  <div>
+    <div
+      v-if="isTimeover"
+      class="timeup"
+    >
+      <p>Time is up!!</p>
     </div>
-    <div>
-      <p v-if="hours">{{ hours }}<span>時間</span></p>
-      <p v-if="minutes">{{ minutes }}<span>分</span></p>
-      <p>{{ seconds }}<span>秒</span></p>
+    <div
+      v-else
+      class="timer"
+    >
+      <div>
+        <p v-if="years">{{ years }}<span>年</span></p>
+        <p v-if="months">{{ months }}<span>ヶ月</span></p>
+        <p v-if="days">{{ days }}<span>日</span></p>
+      </div>
+      <div>
+        <p v-if="hours">{{ hours }}<span>時間</span></p>
+        <p v-if="minutes">{{ minutes }}<span>分</span></p>
+        <p>{{ seconds }}<span>秒</span></p>
+      </div>
     </div>
   </div>
 </template>
@@ -52,11 +63,25 @@ export default {
     },
     milliseconds() {
       return this.duration.milliseconds();
+    },
+    isTimeover () {
+      return this.duration.seconds() < 0;
     }
   }
 }
 </script>
-<style>
+<style scoped>
+p {
+  margin: 0;
+  padding: 8px;
+}
+.timeup {
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  color: brown;
+}
+
 .timer {
   display: flex;
   justify-content: center;
@@ -69,10 +94,8 @@ export default {
 }
 
 .timer p {
-  margin: 0;
   font-weight: 400;
   font-size: 3.5em;
-  padding: 8px;
 }
 
 .timer  p > span {
