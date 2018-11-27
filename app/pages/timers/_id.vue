@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <h1>{{ currentTimer.title }}<span>まで</span></h1>
-    <Timer :duration="duration" />
+    <no-ssr>
+      <Timer :duration="duration" />
+    </no-ssr>
   </div>
 </template>
 <script>
