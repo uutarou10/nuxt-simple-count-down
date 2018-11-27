@@ -1,5 +1,7 @@
 const pkg = require('./package')
 
+const description = '指定した時刻までカウントダウンするタイマーをカンタンに作成することができます。作成したタイマーは簡単に共有できます。';
+
 module.exports = {
   mode: 'universal',
   srcDir: 'app',
@@ -12,10 +14,15 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'og:type', property: 'og:type', content: 'website'},
+      { hid: 'og:title', property: 'og:title', content: 'SIMPLE COUNT DOWN'},
+      { hid: 'og:image', property: 'og:image', content: '/og_image.png'},
+      { hid: 'og:site_name', property: 'og:site_name', content: 'SIMPLE COUNT DOWN'},
+      { hid: 'og:description', property: 'og:description', content: description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
 

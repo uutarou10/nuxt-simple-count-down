@@ -12,8 +12,12 @@ import Timer from  '../../components/Timer';
 
 export default {
   head () {
+    const title = `「${this.currentTimer.title}」までのカウントダウンタイマー`;
     return {
-      title: `「${this.currentTimer.title}」までのカウントダウンタイマー`
+      title,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: title}
+      ]
     };
   },
   components: {
