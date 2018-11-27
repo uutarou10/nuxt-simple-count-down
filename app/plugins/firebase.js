@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 export default (_, inject) => {
@@ -9,5 +9,7 @@ export default (_, inject) => {
       projectId: "simple-count-down",
     });
   }
-  inject('db', firebase.firestore());
+  const firestore = firebase.firestore();
+  firestore.settings({ timestampsInSnapshots: true });
+  inject('db', firestore);
 }

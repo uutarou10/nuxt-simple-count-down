@@ -27,15 +27,18 @@
         placeholder="Select date and time" />
       <el-button
         :disabled="isValid"
+        :loading="isCreating"
         plain
+        @click="createTimer"
       >作成</el-button>
     </section>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
-  asyncData({app}) {
+  asyncData({app, store}) {
     const now = new Date();
     const tommorow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
 
@@ -47,6 +50,17 @@ export default {
   computed: {
     isValid () {
       return !(this.title.length > 0 && this.dueDate != null);
+    },
+    ...mapState({
+      isCreating: state => state.timer.isCreating
+    })
+  },
+  methods: {
+    createTimer () {
+      this.$store.dispatch('timer/createTimer', {
+        title: this.title,
+        dueDate: this.dueDate
+      });
     }
   }
 }
