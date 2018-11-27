@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <h1>{{ currentTimer.title }}<span>まで</span></h1>
-    <Counter :duration="duration" />
+    <Timer :duration="duration" />
   </div>
 </template>
 <script>
 import { mapState } from 'vuex';
-import Counter from  '../../components/Counter';
+import Timer from  '../../components/Timer';
 
 export default {
   components: {
-    Counter
+    Timer
   },
   asyncData () {
     return {
@@ -55,12 +55,13 @@ export default {
 
 h1 {
   font-weight: 900;
-  font-size: 4em;
+  font-size: 5em;
   margin: 8px 0;
   text-align: center;
 }
 
 h1 > span {
   font-size: 0.8em;
+  font-weight: normal;
 }
 </style>
