@@ -61,7 +61,8 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/google-adsense'
   ],
   /*
   ** Axios module configuration
@@ -72,6 +73,10 @@ module.exports = {
 
   'google-analytics': {
     id: process.env.NODE_ENV === 'production' ? 'UA-109873847-3' : ''
+  },
+
+  'google-adsense': {
+    id: 'ca-pub-3730285300185283'
   },
 
   /*
