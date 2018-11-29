@@ -4,6 +4,13 @@
     <no-ssr>
       <Timer :duration="duration" />
     </no-ssr>
+    <div class="buttons">
+      <el-button
+        round
+        size="small"
+        @click="backToTop"
+      >トップに戻る</el-button>
+    </div>
   </div>
 </template>
 <script>
@@ -54,6 +61,9 @@ export default {
   methods: {
     updateRemainTime () {
       this.remainTime = this.currentTimer.dueDate - new Date().getTime();
+    },
+    backToTop () {
+      this.$router.push('/');
     }
   }
 }
@@ -75,5 +85,15 @@ h1 > span {
   display: inline-block;
   font-size: 0.8em;
   font-weight: normal;
+}
+
+.buttons {
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.3s linear;
+}
+
+.buttons:hover {
+  opacity: 1;
 }
 </style>
