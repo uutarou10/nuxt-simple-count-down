@@ -90,6 +90,10 @@ header img {
   padding: 8px;
 }
 
+header small {
+  font-size: 0.8em;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -101,11 +105,26 @@ header img {
   width: 50%;
 }
 
+
 .form > button {
   width: 30%;
 }
 
 p {
   line-height: 1.8em;
+}
+
+.description {
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 600px) {
+  .description {
+    font-size: 1em;
+  }
+
+  .form > * {
+    width: 80%;
+  }
 }
 </style>
