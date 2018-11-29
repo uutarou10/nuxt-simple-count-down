@@ -71,7 +71,7 @@ module.exports = {
   },
 
   'google-analytics': {
-    id: 'UA-109873847-3'
+    id: process.env.NODE_ENV === 'production' ? 'UA-109873847-3' : ''
   },
 
   /*
