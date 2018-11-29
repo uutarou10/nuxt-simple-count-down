@@ -66,12 +66,13 @@ export default {
 
 h1 {
   font-weight: 900;
-  font-size: 5em;
+  font-size: 4em;
   margin: 8px 0;
   text-align: center;
 }
 
 h1 > span {
+  display: inline-block;
   font-size: 0.8em;
   font-weight: normal;
 }
