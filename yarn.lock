@@ -4202,6 +4202,11 @@ is-glob@^4.0.0:
   dependencies:
     is-extglob "^2.1.1"
 
+is-https@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-https/-/is-https-1.0.0.tgz#9c1dde000dc7e7288edb983bef379e498e7cb1bf"
+  integrity sha512-1adLLwZT9XEXjzhQhZxd75uxf0l+xI9uTSFaZeSESjL3E1eXSPpO+u5RcgqtzeZ1KCaNvtEwZSTO2P4U5erVqQ==
+
 is-installed-globally@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/is-installed-globally/-/is-installed-globally-0.1.0.tgz#0dfd98f5a9111716dd535dda6492f67bf3d25a80"
@@ -6326,6 +6331,13 @@ readdirp@^2.0.0:
     graceful-fs "^4.1.11"
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
+
+redirect-ssl@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/redirect-ssl/-/redirect-ssl-1.4.0.tgz#dbba6bc9dc2f86fcd719b9f00b6f731ccfb4e22b"
+  integrity sha512-Pqm3osZjaQh2P9va00ioLEFzLuVwGb6wx+VldoZVzarRb8fso6ItxR8sVlx7lcPTxO4a8dOq8Un9Xnq/iQb5Hw==
+  dependencies:
+    is-https "^1.0.0"
 
 regenerate-unicode-properties@^7.0.0:
   version "7.0.0"

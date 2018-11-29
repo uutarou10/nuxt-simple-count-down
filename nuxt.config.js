@@ -26,6 +26,10 @@ module.exports = {
     ]
   },
 
+  serverMiddleware: [
+    'redirect-ssl'
+  ],
+
   env: {
     apiKey: process.env.FIREBASE_API_KEY
   },
