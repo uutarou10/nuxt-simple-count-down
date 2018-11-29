@@ -26,6 +26,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-size: calc(10px + 1vw);
   }
 
   #frame {
@@ -38,5 +40,15 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    /* body {
+      background-color: red;
+    } */
+    #frame {
+      width: 100vw;
+      padding: 0;
+    }
   }
 </style>
