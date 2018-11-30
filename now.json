@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "alias": "timer.mogam.in",
+  "build": {
+    "env": {
+      "FIREBASE_API_KEY": "@firebase-api-key"
+    }
+  },
+  "env": {
+    "FIREBASE_API_KEY": "@firebase-api-key"
+  }
+}
