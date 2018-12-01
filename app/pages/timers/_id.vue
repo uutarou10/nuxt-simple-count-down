@@ -1,9 +1,5 @@
 <template>
   <div class="container">
-    <!-- <h1>
-      <span class="title">{{ currentTimer.title }}</span>
-      <span>まで</span>
-    </h1> -->
     <h1 class="title-wrap">
       <div>
         <div class="title">{{ currentTimer.title }}</div>
@@ -46,9 +42,16 @@ export default {
       remainTime: 0
     }
   },
-  async fetch ({store, route}) {
+  async fetch ({store, route, error}) {
     if (!store.state.timer.currentTimer) {
       await store.dispatch('timer/getTimer', route.params.id);
+    }
+
+    if (!store.state.timer.currentTimer) {
+      error({
+        statusCode: 404,
+        message: 'そのタイマーは存在しません。'
+      });
     }
   },
   computed: {
