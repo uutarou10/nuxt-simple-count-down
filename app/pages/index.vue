@@ -18,10 +18,12 @@
     <section class="form">
       <el-input
         v-model="title"
+        :disabled="isCreating"
         placeholder="Title"
       />
       <el-date-picker
         v-model="dueDate"
+        :disabled="isCreating"
         type="datetime"
         placeholder="Select date and time" />
       <el-button
