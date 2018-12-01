@@ -1,6 +1,16 @@
 <template>
   <div class="container">
-    <h1>{{ currentTimer.title }}<span>まで</span></h1>
+    <!-- <h1>
+      <span class="title">{{ currentTimer.title }}</span>
+      <span>まで</span>
+    </h1> -->
+    <h1 class="title-wrap">
+      <div>
+        <div class="title">{{ currentTimer.title }}</div>
+        <div class="dueDate">{{ dueDateString }}</div>
+      </div>
+      <span class="untill">まで</span>
+    </h1>
     <no-ssr>
       <Timer :duration="duration" />
     </no-ssr>
@@ -47,6 +57,10 @@ export default {
     }),
     duration () {
       return this.$moment.duration(this.remainTime)
+    },
+    dueDateString () {
+      const dueDate = this.currentTimer.dueDate;
+      return `${dueDate.getFullYear()}年${dueDate.getMonth() + 1}月${dueDate.getDate()}日 ${dueDate.getHours()}時${dueDate.getMinutes()}分`;
     }
   },
   mounted () {
@@ -69,22 +83,31 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .container {
   width: 100%;
 }
 
-h1 {
-  font-weight: 900;
-  font-size: 4em;
-  margin: 8px 0;
+.title-wrap {
   text-align: center;
 }
 
-h1 > span {
-  display: inline-block;
-  font-size: 0.8em;
-  font-weight: normal;
+.title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.dueDate {
+  font-weight: 400;
+  font-size: 0.5em;
 }
 
 .buttons {
