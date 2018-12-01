@@ -32,9 +32,6 @@ export const actions = {
         dueDate: data.dueDate.toDate(),
         title: data.title
       });
-    } else {
-      // 404 Error
-      console.log('404 error')
     }
   }
 }
