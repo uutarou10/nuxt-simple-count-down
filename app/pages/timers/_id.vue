@@ -16,6 +16,16 @@
         size="small"
         @click="backToTop"
       >トップに戻る</el-button>
+      <el-button
+        round
+        size="small"
+        @click="shareTwitter"
+      >Twitter</el-button>
+      <el-button
+        round
+        size="small"
+        @click="shareLine"
+      >LINE</el-button>
     </div>
   </div>
 </template>
@@ -81,6 +91,12 @@ export default {
     },
     backToTop () {
       this.$router.push('/');
+    },
+    shareTwitter () {
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(`${document.title} - SIMPLE COUNT DOWN`)}`);
+    },
+    shareLine() {
+      window.open(`http://line.me/R/msg/text/?${encodeURIComponent(`${document.title} - SIMPLE COUNT DOWN`)}`);
     }
   }
 }
