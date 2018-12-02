@@ -96,7 +96,7 @@ export default {
       window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(`${document.title} - SIMPLE COUNT DOWN`)}`);
     },
     shareLine() {
-      window.open(`http://line.me/R/msg/text/?${encodeURIComponent(`${document.title} - SIMPLE COUNT DOWN`)}`);
+      window.open(`http://line.me/R/msg/text/?${encodeURIComponent(`${document.title} - SIMPLE COUNT DOWN\n${location.href}`)}`);
     }
   }
 }
